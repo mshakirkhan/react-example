@@ -2,9 +2,14 @@ import React from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useFetchCards from '../utils/useFetchCards';
+import useNetworkAvailibility from '../utils/useNetworkAvailibility';
 
 const Cards = () => {
+const network = useNetworkAvailibility();
 const mobileData = useFetchCards();
+if(network === false) {
+    return <h2>No Internet Availibility, Please check your connection</h2>
+}
 
   return (mobileData.length === 0) ? <Shimmer/> : (
     <div className="container cards-container">
