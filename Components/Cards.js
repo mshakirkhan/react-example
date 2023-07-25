@@ -1,18 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
+import useFetchCards from '../utils/useFetchCards';
 
 const Cards = () => {
-    const [mobileData, setMobileData] = useState([]);
-    useEffect(() => {
-        fetchData();
-    }, []);
-    async function fetchData()
-    {
-        const apiData = await fetch("https://dummyjson.com/products");
-        const data = await apiData.json();
-        setMobileData(data.products);
-    }
+const mobileData = useFetchCards();
+
   return (mobileData.length === 0) ? <Shimmer/> : (
     <div className="container cards-container">
         <div className="row">
