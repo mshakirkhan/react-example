@@ -1,0 +1,18 @@
+.cards-container {
+    margin-top: 10px;
+}
+.mobile-cards {
+    min-height: 392px;
+    margin-bottom: 10px;
+}
+.mobile-images {
+    width: 415px;
+    height: 200px;
+}
+
+.shimmer-mobile-images  {
+    background: #cccccc63;
+}
+a {
+    text-decoration: none;
+}
